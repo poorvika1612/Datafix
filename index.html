@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataFix - Data Quality Engine</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>DataFix</h1>
+        <p>Autonomous Data Quality & Repair Engine</p>
+    </header>
+
+    <main>
+
+        <section class="welcome">
+            <h2>Clean Your Data. Improve Your Decisions.</h2>
+            <p>Upload your dataset and let DataFix detect and repair data quality issues.</p>
+        </section>
+
+        <section class="upload-section">
+
+            <h2>Upload Your Dataset</h2>
+
+            <div class="upload-box" id="dropArea">
+                <h3>Drag & Drop Your CSV File</h3>
+                <p>Or choose a file from your computer</p>
+
+                <input type="file" id="fileInput" accept=".csv">
+
+                <button onclick="document.getElementById('fileInput').click()">
+                    Choose File
+                </button>
+
+                <p id="fileName"></p>
+            </div>
+
+            <button id="analyzeBtn">Analyze Dataset</button>
+
+        </section>
+
+        <section class="dashboard">
+
+            <h2>Data Quality Dashboard</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Quality Score</h3>
+                    <h1 id="qualityScore">--</h1>
+                </div>
+
+                <div class="card">
+                    <h3>Missing Values</h3>
+                    <h1 id="missingCount">0</h1>
+                </div>
+
+                <div class="card">
+                    <h3>Duplicate Rows</h3>
+                    <h1 id="duplicateCount">0</h1>
+                </div>
+
+                <div class="card">
+                    <h3>Invalid Emails</h3>
+                    <h1 id="invalidCount">0</h1>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="repair-section">
+
+            <h2>Automatic Data Repair</h2>
+
+            <button id="repairBtn">Repair Dataset</button>
+
+            <div id="repairStatus"></div>
+
+            <button id="downloadBtn">Download Cleaned CSV</button>
+
+        </section>
+
+        <section class="preview-section">
+
+            <h2>Dataset Preview</h2>
+
+            <div id="tableContainer"></div>
+
+        </section>
+
+        <section class="chart-section">
+
+            <h2>Data Quality Analysis</h2>
+
+            <canvas id="qualityChart"></canvas>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>DataFix © 2026 | Smart Data. Better Decisions.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
